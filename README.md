@@ -41,8 +41,7 @@ dotnet restore && dontet build
 ng build
 ```
 
-<!-- USAGE EXAMPLES -->
-## Usage
+### Usage
 
 1. in \JobStats.API\ rund ASP.NET core app:
 ```sh
@@ -51,5 +50,11 @@ dotnet run
 2. in \JobStats.WebCLient\ run the Web app:
 ```sh
 ng serve
+```
+
+### Testing
+run in \JobStats.API\JobStats.Api.Tests\:
+```sh
+dotnet test
 ```
 
