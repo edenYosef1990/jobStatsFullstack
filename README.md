@@ -13,7 +13,7 @@
 ```sh
 dotnet tool install --global dotnet-ef
 ```
-# localDB
+* localDB
 
 ### Installation
 1. Clone the repo
