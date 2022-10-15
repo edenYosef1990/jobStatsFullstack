@@ -1,4 +1,5 @@
 using JobsStats.API.DB;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,10 @@ builder.Services.AddCors(
                           .AllowCredentials()
         ));
 // Add services to the container.
-builder.Services.AddDbContext<JobStatsDbContext>();
+builder.Services.AddDbContext<JobStatsDbContext>(options =>
+            options.EnableSensitiveDataLogging()
+                .UseSqlServer(@"Server=(LocalDB)\JobStatsDatabase;Database=JobStatsDB")
+);
 builder.Services.AddScoped<IJobStatisticsRepository, SqlJobStatisticsRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

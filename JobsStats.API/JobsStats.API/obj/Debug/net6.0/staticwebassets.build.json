@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "35R3ergWNezYlGR7ePcjkLFScTPTVozYafRGRp1u594=",
+  "Source": "JobsStats.API",
+  "BasePath": "_content/JobsStats.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
