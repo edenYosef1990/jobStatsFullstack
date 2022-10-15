@@ -8,10 +8,14 @@ namespace JobsStats.API.DB
 
         private int numberOfCompanies = 10;
         private int watchesUpperLimit = 70;
+        
+        public JobStatsDbContext(DbContextOptions<JobStatsDbContext> options): base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            if (optionsBuilder.IsConfigured) return;
             optionsBuilder.EnableSensitiveDataLogging()
-                .UseSqlServer(@"Server=(LocalDB)\LocalDBDemo;Database=JobStats");
+                .UseSqlServer(@"Server=(LocalDB)\JobStatsDatabase;Database=JobStatsDB");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -56,7 +60,7 @@ namespace JobsStats.API.DB
         #endregion
 
 
-        public DbSet<JobWatchesPerDay>? JobWatchesPerDays { get; set; }
-        public DbSet<PredictedJobWatchesPerDay>? PredictedJobWatchesPerDays { get; set; }
+        public virtual DbSet<JobWatchesPerDay>? JobWatchesPerDays { get; set; }
+        public virtual DbSet<PredictedJobWatchesPerDay>? PredictedJobWatchesPerDays { get; set; }
     }
 }
