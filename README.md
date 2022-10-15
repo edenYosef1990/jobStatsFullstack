@@ -23,37 +23,40 @@ dotnet tool install --global dotnet-ef
 ```
 
 ### Installation
-1. create the database for the app with the coomand:
-```sh
-SqlLocalDb create "JobStatsDatabase"
-```
-2. create the tables (including seeding of data) for the app via the DB schema of the app, from the relative path \JobsStats.API\JobsStats.API:
-```sh
-JobsStats.API>dotnet ef database update
-```
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-3. Install NPM packages
+2. create the database for the app with the coomand:
+```sh
+SqlLocalDb create "JobStatsDatabase"
+```
+3. create the tables (including seeding of data) for the app via the DB schema of the app, from the relative path \JobsStats.API\JobsStats.API\:
+```sh
+JobsStats.API>dotnet ef database update
+```
+4. Install NPM packages in \JobStats.WebClient\:
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+5. in \JobStats.API\ restore packages and build ASP.NET core app:
+```sh
+dotnet restore && dontet build
+```
+6. in \JobStats.WebCLient\ build the Web app:
+```sh
+ng build
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1. in \JobStats.API\ rund ASP.NET core app:
+```sh
+dotnet run
+```
+2. in \JobStats.WebCLient\ run the Web app:
+```sh
+ng serve
+```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
