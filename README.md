@@ -53,6 +53,7 @@ ng serve
 ```
 
 ### Testing
+(Warning: Right now , because of an undedected bug , the test fail when run together buy succeed individually)
 run in \JobStats.API\JobStats.Api.Tests\:
 ```sh
 dotnet test
