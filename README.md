@@ -12,14 +12,25 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
- * angular 
+* angular 
  ```sh
  npm install -g @angular/cli
  ```
- * ASP.NET Core
+* .NET Core
+* .NET Core EntityFramework CLI:
+```sh
+dotnet tool install --global dotnet-ef
+```
 
 ### Installation
-
+1. create the database for the app with the coomand:
+```sh
+SqlLocalDb create "JobStatsDatabase"
+```
+2. create the tables (including seeding of data) for the app via the DB schema of the app, from the relative path \JobsStats.API\JobsStats.API:
+```sh
+JobsStats.API>dotnet ef database update
+```
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
